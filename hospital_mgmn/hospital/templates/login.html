@@ -1,0 +1,14 @@
+<div class="container">
+    <h2>Admin Login</h2>
+    <form method="post">
+        {% csrf_token %}
+        <label>Login: </label>
+        <input type="text" class="form-control" name="uname">
+        <label>Password: </label>
+        <input type="text" class="form-control" name="pwd">
+        <input type="submit" value="Login" class="form-control btn btn-primary">
+
+    </form>
+
+
+</div>
