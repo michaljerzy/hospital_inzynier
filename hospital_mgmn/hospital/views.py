@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import redirect ,render, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponse
@@ -20,13 +20,13 @@ def Index(request):
 def Login(request):
     error = ""
     if request.method == "POST":
-        u = request.Post['uname']
-        p = request.Post['pwd']
+        u = request.POST['uname']
+        p = request.POST['pwd']
         user = authenticate(username = u, password = p)
         try:
             if user.is_staff:
-                Login(request,user)
-                error = "No"
+                login(request,user)
+                error = "no"
             else:
                 error = "yes"
 
@@ -34,3 +34,9 @@ def Login(request):
             error = "yes"
     d = {'error':error}
     return render(request,'login.html', d)
+
+def Logout_admin(request):
+    if not request.user.is_staff:
+        return redirect('login')
+    logout(request)
+    return redirect('admin_login')
