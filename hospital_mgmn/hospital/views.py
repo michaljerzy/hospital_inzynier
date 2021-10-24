@@ -39,4 +39,4 @@ def Logout_admin(request):
     if not request.user.is_staff:
         return redirect('login')
     logout(request)
-    return redirect('admin_login')
+    return redirect('login')
