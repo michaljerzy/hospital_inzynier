@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+{% load widget_tweaks %}
+<html lang="en" dir="ltr">
+
+<head>
+<style>
+    .btnSubmit {
+      border: none;
+      border-radius: 1.5rem;
+      padding: 1%;
+      width: 20%;
+      cursor: pointer;
+      background: #0062cc;
+      color: #fff;
+    }
+  </style>
+
+</head>
+
+
+<body>
+  {% include "hospital/navbar.html" %}
+  <br>
+  <br>
+  <br>
+  <br>
+
+
+
+
+  <!--- signup page for patient by admin(sumit)  ---------->
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="container register-form">
+      <div class="form">
+        <div class="note">
+          <p>Zarejestruj się</p>
+        </div>
+
+        <div class="form-content">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                {% render_field userForm.first_name class="form-control" placeholder="Imię" %}
+              </div>
+              <div class="form-group">
+                {% render_field userForm.username class="form-control" placeholder="Nazwa użytkownika" %}
+              </div>
+              <div class="form-group">
+                {% render_field patientForm.address class="form-control" placeholder="Adres" %}
+              </div>
+              <div class="form-group">
+                {% render_field patientForm.symptoms class="form-control" placeholder="Symptomy" %}
+              </div>
+              <div class="form-group">
+                {% render_field patientForm.profile_pic required="required" class="form-control" placeholder="Zdjęcie" %}
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                {% render_field userForm.last_name class="form-control" placeholder="Nazwisko" %}
+              </div>
+              <div class="form-group">
+                {% render_field userForm.password class="form-control" placeholder="Hasło" %}
+              </div>
+              <div class="form-group">
+                {% render_field patientForm.mobile class="form-control" placeholder="Numer telefonu" %}
+              </div>
+              <div class="form-group">
+                {% render_field patientForm.assignedDoctorId class="form-control" placeholder="Doctor" %}
+              </div>
+
+            </div>
+          </div>
+          <button type="submit" class="btnSubmit">Register</button>
+          <div class="text-center">Masz już konto? <a href="patientlogin">Loguj się</a></div>
+        </div>
+      </div>
+    </div>
+
+  </form>
+
+  {% include "hospital/footer.html" %}
+</body>
+
+
+</html>

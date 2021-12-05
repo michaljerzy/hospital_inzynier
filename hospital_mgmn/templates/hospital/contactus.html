@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+
+<head>
+
+</head>
+
+<body>
+
+  {% include "hospital/navbar.html" %}
+  <br><br>
+
+  <center>
+    <h3 class='alert alert-success'>Napisz do nas!</h3>
+
+    <form method="POST">
+      <!-- Very Important csrf Token -->
+      {% csrf_token %}
+      <div class="form-group">
+        <p>
+        <h3>{{ form.as_p }}</h3>
+        </p>
+        <br>
+        <input type="submit" value="Wyślij wiadomość" class='btn btn-primary btn-lg'>
+      </div>
+    </form>
+  </center>
+  {% include "hospital/footer.html" %}
+</body>
+
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+{% load widget_tweaks %}
+<html lang="en" dir="ltr">
+
+<head>
+  <style type="text/css">
+    .btnSubmit {
+      border: none;
+      border-radius: 1.5rem;
+      padding: 1%;
+      width: 20%;
+      cursor: pointer;
+      background: #0062cc;
+      color: #fff;
+    }
+  </style>
+
+</head>
+
+
+<body>
+  {% include "hospital/navbar.html" %}
+  <br>
+  <br>
+  <br>
+  <br>
+
+
+
+
+  <!--- signup page for admin by admin(sumit)  ---------->
+  <form method="post">
+    {% csrf_token %}
+    <div class="container register-form">
+      <div class="form">
+        <div class="note">
+        </div>
+
+        <div class="form-content">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                {% render_field form.first_name class="form-control" placeholder="Imię" %}
+              </div>
+              <div class="form-group">
+                {% render_field form.username class="form-control" placeholder="Login" %}
+              </div>
+
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                {% render_field form.last_name class="form-control" placeholder="Nazwisko" %}
+              </div>
+              <div class="form-group">
+                {% render_field form.password class="form-control" placeholder="Hasło" %}
+              </div>
+
+            </div>
+          </div>
+          <button type="submit" class="btnSubmit">Rejestruj!</button>
+          <div class="text-center">Masz już konto? <a href="adminlogin">Zaloguj się</a></div>
+        </div>
+      </div>
+    </div>
+
+  </form>
+
+
+  {% include "hospital/footer.html" %}
+</body>
+
+</html>

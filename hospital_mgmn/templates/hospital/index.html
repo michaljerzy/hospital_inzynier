@@ -1,0 +1,39 @@
+{% extends 'hospital/homebase.html' %}
+{% load static %}
+
+
+
+{% block content %}
+
+
+<head>
+  <style media="screen">
+    .jumbotron {
+      margin-top: 20px;
+      margin-bottom: -20px;
+      height: 100%;
+      background-image: url('{% static "images/back.png" %}');
+      height: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+
+
+  </style>
+</head>
+<br>
+<br>
+
+<div class="jumbotron" >
+  <br>
+  <h2 style="text-align: center;" >MMED-TWOJA OPIEKA</h2>
+  <br><br><br><br>
+
+  <p class="lead">
+    <a  href="/patientclick" role="button">Zarejestruj się!</a>
+  </p>
+</div>
+
+{% endblock content %}
