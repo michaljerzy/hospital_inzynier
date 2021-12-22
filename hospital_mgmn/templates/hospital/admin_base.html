@@ -12,7 +12,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-  <link rel="stylesheet" href="{% static '/style.css' %}">
+<!--  <link rel="stylesheet" href="{% static '/style.css' %}">-->
 
 
 
@@ -20,22 +20,21 @@
 
 <body>
 
-  <!-- partial:index.partial.html -->
-  <nav class="menu" tabindex="0">
-    <div class="smartphone-menu-trigger"></div>
-    <header class="avatar">
-      <img src="{% static "images/adminpropic.png" %}" />
-      <br><br>
-      <h6>Admin</h6>
-      <h2>{{request.user.first_name}}</h2>
-    </header>
-    <ul>
-      <li tabindex="0" class="icon-dashboard"> <a style="color:white; text-decoration:none;" href="/admin-dashboard"><span>Panel główny</span></a> </li>
-      <li tabindex="0" class="icon-customers"> <a style="color:white; text-decoration:none;" href="/admin-doctor"><span>Lekarz</span></a></li>
-      <li tabindex="0" class="icon-users"> <a style="color:white; text-decoration:none;" href="/admin-patient"><span>Pacjent</span></a></li>
-      <li tabindex="0" class="icon-calendar"> <a style="color:white; text-decoration:none;" href="/admin-appointment"><span>Wizyta</span></a></li>
-    </ul>
-  </nav>
+
+
+
+<!--    <header class="avatar">-->
+<!--      <br><br>-->
+<!--      <h6>Admin</h6>-->
+<!--      <h2>{{request.user.first_name}}</h2>-->
+<!--    </header>-->
+<!--    <ul>-->
+<!--      <li tabindex="0" class="icon-dashboard"> <a style="color:white; text-decoration:none;" href="/admin-dashboard"><span>Panel główny</span></a> </li>-->
+<!--      <li tabindex="0" class="icon-customers"> <a style="color:white; text-decoration:none;" href="/admin-doctor"><span>Lekarz</span></a></li>-->
+<!--      <li tabindex="0" class="icon-users"> <a style="color:white; text-decoration:none;" href="/admin-patient"><span>Pacjent</span></a></li>-->
+<!--      <li tabindex="0" class="icon-calendar"> <a style="color:white; text-decoration:none;" href="/admin-appointment"><span>Wizyta</span></a></li>-->
+<!--    </ul>-->
+<!--  </nav>-->
 
   <main>
 
@@ -57,7 +56,15 @@
     </div>
     <!-- nav end -->
 
-
+  <div class="list-group">
+  <a href="#" class="list-group-item list-group-item-action active">
+    Menu:
+  </a>
+  <a href="/admin-dashboard" class="list-group-item list-group-item-action">Panel główny</a>
+  <a href="/admin-doctor" class="list-group-item list-group-item-action">Lekarz</a>
+  <a href="/admin-patient" class="list-group-item list-group-item-action">Pacjent</a>
+  <a href="/admin-appointment" class="list-group-item list-group-item-action">Wizyta</a>
+</div>
 
     <br><br>
 
